@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
 	if($erreur==""){
 		// Création du message
 		$titre="Message de votre site";
-		$tete="From:contact@manueweb.fr\n";
+		$tete="From:Site@manueweb.fr\n";
 		$corps.="Nom : ".$f_1."\n";
 		$corps.="Prénom : ".$f_2."\n";
 		$corps.="Société : ".$f_3."\n";
