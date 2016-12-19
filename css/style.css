@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700|Ubuntu:400,400i,700,700i');
+
+/* 
+Reset
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.5rem;
+	text-align: left;
+	background-image: url(../img/001.jpg);
+	background-size: 100%;
+
+		/* EN PLUS : Effet parallax */
+		background-attachment: fixed;
+}
+
+h1, h2, li:first-child a {
+	font-family: 'Orbitron', sans-serif;
+	color: black;
+	text-align: center;
+	margin: 3rem auto;
+}
+
+h1 {
+    color: white;
+    margin: 5rem auto 3rem auto;
+}
+
+h3{
+	font-family: 'Orbitron', sans-serif;
+	color: black;
+	text-align: left;
+	margin: 3rem auto;
+}
+
+h4{
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 400;
+	color: white;
+	padding-top: 1rem;
+	text-align: center;
+}
+
+h5:not(:first-child){
+	font-family: 'Orbitron', sans-serif;
+	color: #7181af;
+	text-align: left;
+	font-size: 2rem;
+	margin: 2rem 1rem 1rem 1rem;
+}
+
+h5:first-child{
+	font-family: 'Orbitron', sans-serif;
+	color: #7181af;
+	text-align: left;
+	font-size: 2rem;
+	margin: .3rem 1rem 1rem 1rem;
+}
+
+h6:not(:first-child){
+	font-family: 'Orbitron', sans-serif;
+	color: gray;
+	text-align: left;
+	font-size: 1.5rem;
+	margin: 2rem 2rem .5rem 2rem;
+}
+
+h6:first-child{
+	font-family: 'Orbitron', sans-serif;
+	color: gray;
+	text-align: left;
+	font-size: 1.5rem;
+	margin: .5rem 2rem .5rem 2rem;
+}
+
+
+
+.ptitle {
+	margin-left: 3rem;
+	margin-bottom: 1rem;
+}
+
+.pdesc {
+	margin-left: 4rem;
+	margin-right: 4rem;
+}
+
+.content{
+	overflow: hidden;
+}
+
+a{
+	font-family: 'Orbitron', sans-serif;
+	text-decoration: none;
+	color: white;
+	padding: 1rem;
+
+	/* Faire une transition entre les deux états des balises A */
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+nav a:hover{
+	background-color: #5d70b1;
+	border-radius: 1rem;
+}
+
+figure img{
+	width: 35%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+a img{
+	border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	display: inline-block;
+    margin : 0rem;
+}
+
+iframe {
+	width: 100%;
+	min-height: 25rem;
+	border: 0;
+}
+
+input[type=text], textarea {
+    color: #7c7873;background:white;
+    width: 70%; height: 36px; padding: 0px 10px; margin: 0 0 10px 0;
+    border:1px solid #f8f5f1;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+    -moz-box-shadow: inset 0px 0px 1px #726959;
+    -webkit-box-shadow:  inset 0px 0px 1px #b3a895; 
+    box-shadow:  inset 0px 0px 1px #b3a895;
+    }
+
+textarea { height: 80px; padding-top:14px;}
+
+input[type=submit]{
+    width: 30%; height: 5%; 
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+}
+
+span[class=txtform]{
+	margin: 11px 20px 0 0; 
+    font-size: 16px; 
+    color: black;
+} 
+
+/* 
+Header
+*/
+
+header{
+	background-position: bottom;
+	background-repeat: no-repeat;
+	padding-bottom: 5rem;
+
+	/* Pour la NAV bloquée en haut */
+	padding-top: 5rem;
+}
+
+.content p{
+	color: black;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+
+
+
+nav{
+	background-color: #99a7cf;
+	margin-bottom: 5rem;
+
+		/*
+		EN PLUS : Bloquer la NAV en haut du site
+		*/
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+}
+
+nav>ul {
+	margin: 1rem;
+}
+
+
+nav ul li:not(:first-child){
+	display: inline-block;
+	padding-top: 1rem;
+}
+
+nav ul li:first-child a {
+	font-size: 2rem;
+	color: white;
+	padding-bottom: 2rem;
+}
+
+.btnHome {
+	vertical-align: center;
+}
+
+/* Supprimer l'effet sur la balise A du premier LI */
+nav ul li:first-child a:hover{
+	background-color: transparent;
+}
+
+/* 
+Main
+*/
+main{
+	padding: 2rem;
+	background-color: rgba(255, 255, 255, 0.75);
+	margin: 0 2rem 3rem 2rem;
+
+	/* 
+	Ne pas oublier les préfixes pour être sûr que 
+	les propriétés s'affichent sur tous les navigateurs 
+	*/
+	-webkit-box-shadow: 0 0 1rem rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 1rem rgba(0,0,0,.5);
+	box-shadow: 0 0 1rem rgba(0,0,0,.5);
+
+	-webkit-border-radius: 1rem;
+	border-radius: 1rem;
+}
+
+.txtform{
+	font-family: 'Orbitron', sans-serif;
+	color: white;
+	padding: 2rem;
+}
+
+dt{
+	margin-left: 2rem;
+}
+
+.def{
+	font-family: 'Orbitron', sans-serif;
+	margin-bottom: 1rem;
+}
+
+.welcome{
+	font-size: 2rem;
+}
+
+aside a{
+	color: #3b5398;
+}
+
+aside{
+	text-align: center;
+	padding-top: 2rem;
+}
+
+#competences {
+	text-align: justify;
+	text-transform: uppercase;
+}
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+.left {
+	width: 40%;
+}
+
+.experience{
+	text-align: justify;
+	width: 50%
+}
+
+.pdesc{
+	text-align: justify;
+	padding-bottom: 2rem;
+}
+
+blockquote{
+	text-align: center;
+	font-style: italic;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+aside{
+	padding-bottom: 5rem;
+}
+
+.bandeau{
+	width:150px;
+	height:25%;
+	padding:1px;
+	position: relative;
+}
+
+.bandeautxt {
+	display: block; 
+	position: absolute; 
+	text-align: center; 
+	background: rgba(0, 0, 0, 0.5) 
+	none repeat scroll 0% 0%; 
+	bottom: 4px; 
+	padding: 5px; 
+	border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+}
+
+.square{
+	display: inline-block; 
+	position: relative; 
+	margin: 3%; 
+	padding: 0px;
+}
+
+
+/* 
+Footer
+*/
+footer {
+	background-color: #99a7cf;
+	text-align: center;
+	color: white;
+	font-size: 1rem;
+	padding: 1.5rem;
+}
+
+
+/*
+EN PLUS : Animations
+*/
+@-webkit-keyframes animTitle{
+	from {left:0; opacity: 0}
+	to {left:50%; opacity: 1}
+}
+
+@keyframes animTitle{
+	from {left:0; opacity: 0}
+	to {left:50%; opacity: 1}
+}
+
+
+/* 
+Responsive Design
+*/
+@media screen and (min-width:950px) {
+
+	.fa{
+		display: none;
+	}
+	
+
+	/*
+	Reset
+	*/ 
+	h3{
+		margin: 3rem auto 1rem auto;
+	}
+
+	nav ul, main{
+		max-width: 95rem;
+		margin: auto;
+		position: relative;
+	}
+
+	nav ul li:not(:first-child), li {
+		display: inline-block;
+		padding-top: 0;
+	}
+
+	nav ul li:not(:first-child) a{
+		padding: 1.8rem;
+	}
+
+	nav ul li:first-child{
+		position: absolute;
+		left: -4rem;
+		top: auto;
+	}
+	
+	/*
+	Header
+	*/
+	header {
+	    background-size: 35%;
+	}
+
+	nav {
+	    margin-bottom: 10rem;
+	    text-align: right;
+	    padding: 2rem;
+	}
+
+
+
+
+
+	/*
+	EN PLUS : Animation sur le titre
+	*/
+
+	header {
+	    padding-bottom: 2rem;
+
+	    /* Pour la NAV bloquée en haut */
+	    padding-top: 6rem;
+	}
+
+	h1{
+		position: relative;
+	}
+
+	h1 span{
+		display: block;
+		left: 50%;
+		
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+
+		position: absolute;
+		animation-name: animTitle;
+		animation-duration: 1s;
+	}
+	
+	/*
+	Footer
+	*/
+	footer {
+	    margin-top: 3rem;
+	    padding-bottom: 1rem;
+	}
+}
+
+
+
+.bloc_contenu{
+	display: none;
+}
