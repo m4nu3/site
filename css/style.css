@@ -20,8 +20,8 @@ body{
 	background-image: url(../img/001.jpg);
 	background-size: 100%;
 
-		/* EN PLUS : Effet parallax */
-		background-attachment: fixed;
+	/* EN PLUS : Effet parallax */
+	background-attachment: fixed;
 }
 
 h1, h2, li:first-child a {
@@ -93,10 +93,15 @@ h6:first-child{
 .pdesc {
 	margin-left: 4rem;
 	margin-right: 4rem;
+	padding-bottom: 3rem;
 }
 
 .content{
 	overflow: hidden;
+}
+
+.bloc_contenu{
+	display: none;
 }
 
 a{
@@ -115,19 +120,11 @@ nav a:hover{
 	border-radius: 1rem;
 }
 
-figure img{
+.couv{
 	width: 35%;
 	display: block;
     margin-left: auto;
     margin-right: auto 
-}
-
-a img{
-	border-radius: 1rem;
-	-moz-border-radius: 1rem;
-	-webkit-border-radius: 1rem;
-	display: inline-block;
-    margin : 0rem;
 }
 
 iframe {
@@ -137,8 +134,14 @@ iframe {
 }
 
 input[type=text], textarea {
-    color: #7c7873;background:white;
-    width: 70%; height: 36px; padding: 0px 10px; margin: 0 0 10px 0;
+    color: #7c7873;
+    background:white;
+    width: 50%; 
+    height: 36px; 
+    padding: auto;
+    margin: auto;
+    margin-bottom: 2rem;
+    display: block;
     border:1px solid #f8f5f1;
     -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
     -moz-box-shadow: inset 0px 0px 1px #726959;
@@ -146,19 +149,29 @@ input[type=text], textarea {
     box-shadow:  inset 0px 0px 1px #b3a895;
     }
 
-textarea { height: 80px; padding-top:14px;}
+textarea { 
+	height: 80px; 
+	padding-top:14px;
+}
 
 input[type=submit]{
-    width: 30%; height: 5%; 
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    position: relative;
 }
 
-span[class=txtform]{
-	margin: 11px 20px 0 0; 
-    font-size: 16px; 
-    color: black;
+label[class=txtform]{
+	text-align: right;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 16px; 
+	color: black;
+	margin: 2% 0 0 6%; 
+	display: block;
+	position: absolute;
 } 
 
 /* 
@@ -241,15 +254,6 @@ main{
 	border-radius: 1rem;
 }
 
-.txtform{
-	font-family: 'Orbitron', sans-serif;
-	color: white;
-	padding: 2rem;
-}
-
-dt{
-	margin-left: 2rem;
-}
 
 .def{
 	font-family: 'Orbitron', sans-serif;
@@ -270,7 +274,6 @@ aside{
 }
 
 #competences {
-	text-align: justify;
 	text-transform: uppercase;
 }
 
@@ -286,13 +289,7 @@ aside{
 }
 
 .experience{
-	text-align: justify;
 	width: 50%
-}
-
-.pdesc{
-	text-align: justify;
-	padding-bottom: 2rem;
 }
 
 blockquote{
@@ -306,6 +303,15 @@ aside{
 	padding-bottom: 5rem;
 }
 
+
+div img{
+	border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	display: inline-block;
+    margin : 0rem;
+}
+
 .bandeau{
 	width:150px;
 	height:25%;
@@ -314,12 +320,14 @@ aside{
 }
 
 .bandeautxt {
+	font-family: 'Orbitron', sans-serif;
+	color: white;
 	display: block; 
 	position: absolute; 
 	text-align: center; 
 	background: rgba(0, 0, 0, 0.5) 
 	none repeat scroll 0% 0%; 
-	bottom: 4px; 
+	bottom: 3px; 
 	padding: 5px; 
 	border-radius: 1rem;
 	-moz-border-radius: 1rem;
@@ -358,6 +366,113 @@ EN PLUS : Animations
 	from {left:0; opacity: 0}
 	to {left:50%; opacity: 1}
 }
+
+
+
+/* The Image */
+div.img img {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+/* Description of Image */
+div.desc {
+	font-family: 'Ubuntu', sans-serif;
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add Responsiveness */
+.responsive {
+    display: inline-block;
+    margin: 3%;
+    position: relative;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+/* Caption of Modal Image */
+#caption {
+	font-family: 'Ubuntu', sans-serif;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+@-webkit-keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.1)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 
 /* 
@@ -453,6 +568,3 @@ Responsive Design
 
 
 
-.bloc_contenu{
-	display: none;
-}
