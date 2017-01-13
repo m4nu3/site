@@ -1,98 +1,3 @@
-/*
-// Attendre le chargement du DOM
-$(document).ready(function (){
-
-	// Variables globales
-	var introPage = $("#introPage");
-	var contentPage = $("#contentPage");
-
-	// Création du type d'objet Page (constructeur)
-	function PageType(titleParam, descriptionParam, contentParam){
-		this.title = titleParam;
-		this.description = descriptionParam;
-		this.content = contentParam;
-	};
-
-
-	// Créer une fonction pour afficher le bon contenu
-	function showPages(btn, object){
-		// Capter l'évènement click sur le lien "Projet"
-		$(btn).click(function(event){
-
-			// Bloquer le comportement naturel de la balise 
-			event.preventDefault();
-			console.log(object);
-
-			// Modifier le contenu HTML d'une balise
-			introPage.html(object.title + object.description);
-			contentPage.html(object.content);
-
-		});
-	};
-
-	// Créer un tableau d'objet pour le contenu des deux pages (projet/contact)
-	var myContent = [
-		{
-			title: "<h2>Home</h2>",
-			description: "<p>HOME - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>",
-			content: '<p>HOME CONTENT- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p><figcaption>Gnagnagna</figcaption> </figure> <figure> <img src="img/couv.png" alt="" /></figure>'
-		},
-
-		{
-			title: "<h2>Work</h2>",
-			description: "<p>WORK - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>",
-			content: '<p>CONTENT WORK - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>'
-		},
-
-		{
-			title: "<h2>CV</h2>",
-			description: "<p>CV - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>",
-			content: '<p>CONTENT CV - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>'
-		},
-		{
-			title: "<h2>Blog</h2>",
-			description: "<p>BLOG - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>",
-			content: '<p>CONTENT BLOG - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur quia necessitatibus, impedit sed obcaecati dolore recusandae cumque! Recusandae omnis, ipsam dolorum vel nulla non blanditiis mollitia quibusdam natus deserunt.</p>'
-		}
-
-		
-	];
-
-	// Faire une boucle for sur le tableau de données
-	for( var i = 0; i < myContent.length; i++){
-
-		// Créer des objets selon la valeur de la variable i
-		if ( i == 0) {
-			var pageHome = new PageType(myContent[i].title, myContent[i].description, myContent[i].content);
-
-		} else if ( i == 1) {
-			var pageWork = new PageType(myContent[i].title, myContent[i].description, myContent[i].content);
-
-		} else if ( i == 2) {
-			var pageCV = new PageType(myContent[i].title, myContent[i].description, myContent[i].content);
-
-		} else {
-			var pageBlog = new PageType(myContent[i].title, myContent[i].description, myContent[i].content);
-
-		} 
-	};
-
-	// Initier la page avec le contenu de la page projet
-	introPage.html(pageHome.title + pageHome.description);
-	contentPage.html(pageHome.content);
-
-	// Appeler la fonction pour afficher le bon contenu
-	showPages("#btnHome", pageHome);
-	showPages("#btnWork", pageWork);
-	showPages("#btnCV", pageCV);
-	showPages("#btnBlog", pageBlog);
-
-
-}); // Fin de la fonction de chargement du DOM
-
-*/
-//~ #### RAJOUTS LECTEUR #### 
-
 // Attendre le chargement du DOM
 $(document).ready(function (){
 	/*
@@ -160,5 +65,31 @@ $(document).ready(function (){
 		return idx != -1 ? url.substring(idx+1) : "";
 	}
 
+
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() { 
+	    modal.style.display = "none";
+	}
+
+	// Get all images and insert the clicked image inside the modal
+	// Get the content of the image description and insert it inside the modal image caption
+	var images = document.getElementsByClassName('only');
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	var i;
+	for (i = 0; i < images.length; i++) {
+	   images[i].onclick = function(){
+	       modal.style.display = "block";
+	       modalImg.src = this.src;
+	       modalImg.alt = this.alt;
+	       captionText.innerHTML = this.nextElementSibling.innerHTML;
+	   }
+	}
 
 });
