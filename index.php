@@ -3,7 +3,7 @@
 $color_font_warn="#FF0000";
 // Couleur de fond des champs si erreur saisie utilisateur
 $color_form_warn="#FFCC66";
-// Ne rien modifier ci-dessous si vous n’êtes pas certain de ce que vous faites !
+
 if(isset($_POST['submit'])){
 	$erreur="";
 	// Nettoyage des entrées
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
 					<li><a href="#btnHome" class="btn">Home</a></li>
 					<li><a href="#btnWork" class="btn">Work</a></li>
 					<li><a href="#btnCV" class="btn">CV</a></li>
-					<li><a href="#btnBlog" class="btn">Blog</a></li>
+					<li><a href="http://manueweb.fr/blog/">Blog</a></li>
 					<li><a href="#btnContact" class="btn">Contact</a></li>			
 				</ul>
 				<!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
@@ -101,7 +101,7 @@ if(isset($_POST['submit'])){
 			<section id="btnHome" class="bloc_contenu">
 				<h2>What ?! Who ?!</h2>
 				<div class="description">
-					<figure> <img src="img/couv.png" alt="" /></figure>
+					<figure><img class="couv" src="img/couv.png" alt="" /></figure>
 					<hr>
 				</div>
 				<div class="content">
@@ -128,41 +128,76 @@ if(isset($_POST['submit'])){
 				<div class="description">
 				<div class="content">
 					<h5>Design Graphic</h5>
-					
-					 <div><a class="square" href="graph/agenda.jpg" target="_blank">
-					 <img alt="" title="Illustration" src="graph/agenda200.jpg">
-					 <span class="bandeautxt">Illustration Agenda</span></a> 
+						<article>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/agenda.jpg" alt="Illustration Agenda">	
+						    <span class="bandeautxt">Illustration Agenda</span>				    
+						  </div>
+						</div>
 
-					 <a class="square" href="graph/chorée.jpg" target="_blank">
-					 <img alt="" title="Illustration" src="graph/chorée200.jpg">
-					 <span class="bandeautxt">Illustration Danse Bûto</span></a> 
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/chorée.jpg" alt="Illustration Danse Bûto">
+						    <span class="bandeautxt">Illustration Danse Bûto</span>					    
+						  </div>
+						</div>
 
-					 <a class="square" href="graph/louvre.jpg" target="_blank">
-					 <img alt="" title="Montage" src="graph/louvre200.jpg">
-					 <span class="bandeautxt">Sac Musée Louvre</span></a>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/louvre.jpg" alt="Sac Musée Louvre">`
+						    <span class="bandeautxt">Sac Musée Louvre</span>					   					    
+						  </div>
+						</div>
 
-					 <a class="square" href="graph/screamingjh.jpg" target="_blank">
-					 <img alt="" title="Illustration" src="graph/screamingjh200.jpg">
-					 <span class="bandeautxt">Illustration Jay Hawkins</span></a></div>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/screamingjh.jpg" alt="Illustration Jay Hawkins">
+						    <span class="bandeautxt">Illustration Jay Hawkins</span>					   					
+						  </div>
+						</div></article>
 
-					 <div><a class="square" href="graph/mvt.jpg" target="_blank">
-					 <img alt="" title="Illustration" src="graph/mvt200.jpg">
-					 <span class="bandeautxt">Illustration Le Mouvement</span></a>
+						<article>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/mvt.jpg" alt="Illustration Le Mouvement">	
+						    <span class="bandeautxt">Illustration Le Mouvement</span>			    
+						  </div>
+						</div>
 
-					 <a class="square" href="graph/jay.jpg" target="_blank">
-					 <img alt="" title="Illustration" src="graph/jay200.jpg">
-					 <span class="bandeautxt">Illustration Jay Hawkins</span></a>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/jay.jpg" alt="Illustration Jay Hawkins">
+						    <span class="bandeautxt">Illustration Jay Hawkins</span>	 
+						  </div>
+						</div>
 
-					 <a class="square" href="graph/haring.jpg" target="_blank">
-					 <img alt="" title="Identité" src="graph/haring200.jpg">
-					 <span class="bandeautxt">Identité Keith Haring</span></a>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/haring.jpg" alt="Identité Keith Haring">
+						    <span class="bandeautxt">Identité Keith Haring</span>							    
+						  </div>
+						</div>
 
-					 <a class="square" href="graph/durex.jpg" target="_blank">
-					 <img alt="" title="Identité" src="graph/durex200.jpg">
-					 <span class="bandeautxt">Identité Marque Durex</span></a></div>
+						<div class="responsive">
+						  <div class="img">
+						    <img class="only" src="graph/durex.jpg" alt="Identité Marque Durex">
+						    <span class="bandeautxt">Identité Marque Durex</span>					   			    
+						  </div>
+						</div></article>
+
+						<div class="clearfix"></div>
+
+						<!-- The Modal -->
+						<div id="myModal" class="modal">
+						  <span class="close">×</span>
+						  <img class="modal-content" id="img01">
+						  <div id="caption"></div>
+						</div>
+
 
 					<h5>Photographie</h5>
-					<div>
+					<article>
 					<a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157631813249620" target="_blank">
 					<img alt="" title="Museum" src="img/potame.jpg">
 					<span class="bandeautxt">Museum Histoire Naturelle</span></a>
@@ -177,15 +212,15 @@ if(isset($_POST['submit'])){
 
 					<a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157622434471752" target="_blank">
 					<img alt="" title="Salon du Tatouage" src="img/tatouage.jpg">
-					<span class="bandeautxt">Salon du Tatouage</span></a></div>
+					<span class="bandeautxt">Salon du Tatouage</span></a></article>
 
-					<div><a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157622365132557" target="_blank">
+					<article><a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157622365132557" target="_blank">
 					<img alt="" title="Concert Peter Murphy" src="img/peter.jpg">
 					<span class="bandeautxt">Concert Peter Murphy</span></a>
 
 					<a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157625347662571" target="_blank">
 					<img alt="" title="Concert Foals" src="img/foals.jpg">
-					<span class="bandeautxt">Concert Foals</span></a>
+					<span class="bandeautxt">Concert Foals Paris</span></a>
 
 					<a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157626335943786" target="_blank">
 					<img alt="" title="Concert No One Is Innocent" src="img/innocent.jpg">
@@ -193,7 +228,7 @@ if(isset($_POST['submit'])){
 
 					<a class="square" title="Album" href="https://www.flickr.com/photos/m4nue/albums/72157626925131133" target="_blank">
 					<img alt="" title="Concert Kid Loco" src="img/kidloco.jpg">
-					<span class="bandeautxt">Concert Kid Loco</span></a></div>
+					<span class="bandeautxt">Concert Kid Loco</span></a></article>
 
 				</div>
 			</section>
@@ -291,10 +326,10 @@ if(isset($_POST['submit'])){
 			<section id="btnBlog" class="bloc_contenu">
 				<h2>Blog</h2>
 				<div class="description">
-					<p>Coming soon...</p>
+					
 				</div>
 				<div class="content">
-					<p>...mon blog !</p>
+					
 				</div>
 			</section>
 
@@ -302,42 +337,44 @@ if(isset($_POST['submit'])){
 				<h2>Me contacter</h2>
 				<div class="content">
 				<? if($ok_mail=="true"){ ?>
-					<table width='100%' border='0' cellspacing='1' cellpadding='1'>
-						<tr><td><span class='txtform'>Le message a bien été transmis !</span></td></tr>
-						<tr><td>&nbsp;</td></tr>
-						<tr><td><tt><?echo nl2br(stripslashes($corps));?></tt></td></tr>
-						<tr><td>&nbsp;</td></tr>
-						<tr><td><span class='txtform'>Je vous répondrai dans les meilleurs délais. A bientôt !</span></td></tr>
-					</table>
+
+						<span class='txtform'>Le message a bien été transmis !</span><br>
+						
+						<span><?echo nl2br(stripslashes($corps));?></span>
+						
+						<span class='txtform'>Je vous répondrai dans les meilleurs délais. A bientôt !</span>
+
 				<? }else{ ?>
 				<form action='<? echo $PHP_SELF ?>' method='post' name='Form'>
-				<table width='100%' border='0' cellspacing='1' cellpadding='1'>
-				<? if($erreur){ ?><tr><td colspan='2' bgcolor='red'><span class='txterror'><font color='white'><b>&nbsp;ERREUR, votre message n'a pas été transmis</b></font></span></td></tr><tr><td colspan='2'><ul><?echo$erreur?></ul></td></tr><?}?>
+				<? if($erreur){ ?><span class='txterror'>ERREUR, votre message n'a pas été transmis</span><ul><?echo$erreur?></ul><?}?>
 				
-				<tr><td align='right'><span class='txtform'>Nom* :</span></td>
-				<td><input type='text' style='<?if($errf_1==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_1' value='<?echo stripslashes($f_1);?>'></td></tr>
-
-				<tr><td align='right'><span class='txtform'>Prénom* :</span></td>
-				<td><input type='text' style='<?if($errf_2==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_2' value='<?echo stripslashes($f_2);?>' size='30' border='0'></td></tr>
-
-				<tr><td align='right'><span class='txtform'>Société :</span></td>
-				<td><input type='text' style='<?if($errf_3==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_3' value='<?echo stripslashes($f_3);?>' size='24' border='0'></td></tr>
-
-				<tr><td align='right'><span class='txtform'>Email* :</span></td>
-				<td><input type='text' style='<?if($errf_4==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_4' value='<?echo stripslashes($f_4);?>' size='24' border='0'></td></tr>
-
-				<tr><td align='right'><span class='txtform'>Téléphone :</span></td>
-				<td><input type='text' style='<?if($errf_5==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_5' value='<?echo stripslashes($f_5);?>' size='24' border='0'></td></tr>
-
-				<tr><td align='right'><span class='txtform'>Message* :</span></td>
-				<td><textarea style='<?if($errf_6==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_6' rows='6' cols='40'><?echo$f_6?></textarea></td></tr>
-
-				<tr><td colspan='2'><span class='txterror' style='color: white'><i>* Champs obligatoires</i></span></td></tr>
-
-				<tr><td align='right'></td><td><input type='submit' name='submit' value='Envoyer' border='0'></td></tr>
+				<label class='txtform'>Nom* :</label>
+				<input type='text' style='<?if($errf_1==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_1' value='<?echo stripslashes($f_1);?>'>
 				
-				</table>
+
+				<label class='txtform'>Prénom* :</label>
+				<input type='text' style='<?if($errf_2==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_2' value='<?echo stripslashes($f_2);?>' size='30' border='0'>
+				
+
+				<label class='txtform'>Société :</label>
+				<input type='text' style='<?if($errf_3==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_3' value='<?echo stripslashes($f_3);?>' size='24' border='0'>
+				
+
+				<label class='txtform'>Email* :</label>
+				<input type='text' style='<?if($errf_4==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_4' value='<?echo stripslashes($f_4);?>' size='24' border='0'>
+				
+
+				<label class='txtform'>Téléphone :</label>
+				<input type='text' style='<?if($errf_5==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_5' value='<?echo stripslashes($f_5);?>' size='24' border='0'>
+				
+
+				<label class='txtform'>Message* :</label>
+				<textarea style='<?if($errf_6==1){print("; background-color: ".$color_form_warn."; color: ".$color_font_warn);}?>;' name='f_6' rows='6' cols='40'><?echo$f_6?></textarea>
+				
+
+				<input type='submit' name='submit' value='Envoyer'>
 				</form>
+				<span>* Champs obligatoires</span>
 				<? } ?>
 				</div>
 			</section>
@@ -352,5 +389,7 @@ if(isset($_POST['submit'])){
 
 		<!-- Intégrer le script de la page APRES le CDN jQuery -->
 		<script type="text/javascript" src="js/script.js"></script>
+
+
 	</body>
 </html>
